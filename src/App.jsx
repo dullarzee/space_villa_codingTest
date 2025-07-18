@@ -1,7 +1,7 @@
 //import { useState } from "react";
 import "./tailwind/App.css";
 import DashBoardLayout from "./components/dashboardLayout";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import RewardPages from "./dashboardPages/rewardPage";
 
 function App() {
@@ -9,6 +9,10 @@ function App() {
         <DashBoardLayout>
             <BrowserRouter>
                 <Routes>
+                    <Route
+                        path="/"
+                        element={<Navigate to="dashboard/rewards" replace />}
+                    />
                     <Route path="dashboard/rewards" element={<RewardPages />} />
                 </Routes>
             </BrowserRouter>

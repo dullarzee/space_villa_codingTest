@@ -26,20 +26,20 @@ export default function RewardPages() {
                     </div>
 
                     <div className="flex gap-x-[1.5rem] justify-between h-35">
-                        <div className="flex-1 flex-col rounded-[1rem] bg-[#039654] h-full p-4 justify-between">
+                        <div className="flex flex-1 flex-col rounded-[1rem] bg-[#039654] h-full p-4 justify-between">
                             <h2 className="text-white text-xl">Cashbacks</h2>
-                            <h3 className="text-4xl text-white font-bold">
-                                <span className="text-lg">₦</span>
+                            <h3 className="text-4xl text-white font-semibold">
+                                <span className="text-xl">₦</span>
                                 0.00
                             </h3>
                         </div>
 
                         <div className="flex-1 flex-col justify-between rounded-[1rem] bg-[#F2F4F7] w-[11rem] h-full p-4 border-[1px] border-[#FCFCFD]">
-                            <div className="w-[30%] border">
+                            <div className="flex flex-col justify-between h-full w-[30%]">
                                 <h2 className="text-gray-400 text-xl">
                                     Spacepoints
                                 </h2>
-                                <h3 className="text-4xl text-gray-500 font-bold">
+                                <h3 className="flex items-center gap-x-1.5 text-4xl text-gray-500 font-semibold ">
                                     <span className="text-lg">
                                         <img src={spacepointCoin} />
                                     </span>

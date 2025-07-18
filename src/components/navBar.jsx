@@ -1,19 +1,11 @@
-import spaceVillaLogo from "../assets/spaceVillaLogo2.jpeg";
+import spaceVillaLogo from "../assets/spaceVillaLogoOriginal.svg";
+import hamburger from "../assets/hamburger.svg";
 export default function NavBar() {
     return (
         <>
             <nav className="flex fixed gap-x-62 top-0 left-0 h-16 w-full px-5 items-center bg-[#F2F4F7] z-20 justify-between ">
                 <div className="flex w-[8%] gap-x-5 items-center h-full">
-                    <svg
-                        className="w-8 h-4 border fill-black stroke-black"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z"
-                            fill="#FFF"
-                            fillRule="evenodd"
-                        />
-                    </svg>
+                    <img src={hamburger} />
                     <img src={spaceVillaLogo} className=" w-[80%]" />
                 </div>
 

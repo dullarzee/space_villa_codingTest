@@ -14,7 +14,7 @@ export default function SideBar() {
     const location = useLocation();
     console.log(location);
     return (
-        <div className="z-15 bottom-0 left-0 fixed border border-[#D0D5DD] w-56 pb-6 bg-[#F2F4F7] custom-scrollbar h-[100vh] overflow-y-scroll">
+        <div className="hidden lg:block z-15 bottom-0 left-0 fixed border border-[#D0D5DD] w-56 pb-6 bg-[#F2F4F7] custom-scrollbar h-[100vh] overflow-y-scroll">
             <div className="flex flex-col gap-y-10 pl-4">
                 <div className="flex flex-col gap-y-5 pt-20">
                     <button className="flex items-center  font-semibold gap-x-[10px] rounded-[8px] justify-start h-9">

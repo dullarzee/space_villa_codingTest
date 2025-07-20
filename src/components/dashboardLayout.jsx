@@ -8,13 +8,13 @@ DashBoardLayout.propTypes = {
 };
 export default function DashBoardLayout({ children }) {
     return (
-        <div className="overflow-y-auto">
+        <div className="overflow-y-auto font-inter">
             <NavBar />
             <aside>
                 <SideBar />
             </aside>
             <QuickHelpWidget />
-            <main className="pl-63 pt-26 overflow-y-auto pr-10 w-full min-h-[100vh]">
+            <main className="lg:pl-63 pt-26 overflow-y-auto lg:pr-10 w-full min-h-[100vh]">
                 <div className="pb-10">{children}</div>
             </main>
         </div>

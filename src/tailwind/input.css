@@ -2,4 +2,5 @@
 
 @theme {
     --shadow-chatBubble: 0 3px 18px rgba(12, 130, 100, 0.2);
+    --font-inter: inter;
 }

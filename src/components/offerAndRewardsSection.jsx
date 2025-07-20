@@ -20,13 +20,13 @@ export default function OffersAndRewardsSection({
 }) {
     return (
         <div className="flex flex-col gap-y-[26px] mt-8 min-h-100 pb-16">
-            <div className="flex items-center h-16 px-6 justify-between">
-                <div className="flex w-32 gap-x-6">
+            <div className="flex items-center h-16 px-6 justify-between ">
+                <div className="flex w-32 gap-x-6 ">
                     <button
                         onClick={() => {
                             setRewardsState("offers");
                         }}
-                        className={`text-lg border-b-green-700 ${
+                        className={`text-[14px] md:text-lg border-b-green-700 ${
                             rewardsState === "offers"
                                 ? "font-bold text-green-700 border-b-3"
                                 : "text-slate-400 font-medium"
@@ -36,7 +36,7 @@ export default function OffersAndRewardsSection({
                     </button>
                     <button
                         onClick={() => setRewardsState("rewards")}
-                        className={`text-lg border-b-green-700 ${
+                        className={`text-[14px] md:text-lg border-b-green-700 ${
                             rewardsState === "rewards"
                                 ? "font-bold text-green-700 border-b-3"
                                 : "text-slate-400 font-medium"
@@ -46,17 +46,16 @@ export default function OffersAndRewardsSection({
                     </button>
                 </div>
 
-                <div className="flex w-32 gap-x-6">
+                <div className="flex items-center h-9 lg:h-auto w-25 md:w-32">
                     <button
                         onClick={() => setCurrentView("list")}
-                        className={` px-4 py-2 rounded-[8.4px] ${
+                        className={`flex-1 px-4 py-2.5 md:py-3 rounded-[8.4px] ${
                             currentView === "list" ? "bg-[#12B76A] " : ""
                         }`}
                     >
                         {/*svg for unique hamburger icon*/}
                         <svg
-                            width="26"
-                            height="20"
+                            /*className="w-6 md:w-[30px]"*/
                             viewBox="0 0 26 20"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -76,13 +75,12 @@ export default function OffersAndRewardsSection({
                     </button>
                     <button
                         onClick={() => setCurrentView("block")}
-                        className={` px-4 py-2 rounded-[8.4px] ${
+                        className={`flex-1 px-4 py-2 rounded-[8.4px] ${
                             currentView === "block" ? "bg-[#12B76A] " : ""
                         }`}
                     >
                         <svg
-                            width="31"
-                            height="32"
+                            /*className="w-6 md:w-[30px]"*/
                             viewBox="0 0 31 32"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +100,10 @@ export default function OffersAndRewardsSection({
 
             {/*conditionally rendered buttons for choosing reward types*/}
             {rewardsState === "rewards" && (
-                <div className="flex min-h-17.5 w-144 bg-[#F3F4F6] p-1 rounded-[15px]">
+                <div className="flex min-h-14.5 md:min-h-17.5 w-[96%] lg:w-144 bg-[#F3F4F6] p-1 rounded-[15px] mx-auto md:mx-0">
                     <button
                         onClick={() => setRewardsSubState("pending")}
-                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-lg font-medium ${
+                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-md md:text-lg font-medium ${
                             rewardsSubState === "pending"
                                 ? "bg-[#F6FEF9] border-[2px]"
                                 : ""
@@ -115,7 +113,7 @@ export default function OffersAndRewardsSection({
                     </button>
                     <button
                         onClick={() => setRewardsSubState("successful")}
-                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-lg font-medium ${
+                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-md md:text-lg font-medium ${
                             rewardsSubState === "successful"
                                 ? "bg-[#F6FEF9] border-[2px]"
                                 : ""
@@ -125,7 +123,7 @@ export default function OffersAndRewardsSection({
                     </button>
                     <button
                         onClick={() => setRewardsSubState("rejected")}
-                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-lg font-medium ${
+                        className={`flex-1 rounded-[11.5px] text-[#101828] border-[#12B76A] text-md md:text-lg font-medium ${
                             rewardsSubState === "rejected"
                                 ? "bg-[#F6FEF9] border-[2px]"
                                 : ""
@@ -138,7 +136,7 @@ export default function OffersAndRewardsSection({
 
             {/*container for displaying rendered items*/}
             <div
-                className={`flex min-h-80 w-full ${
+                className={`flex min-h-80 w-full py-5 px-2.5 md:p-0 gap-y-8 flex-wrap ${
                     currentView === "block"
                         ? "flex-row justify-between"
                         : "flex-col gap-8"

@@ -5,6 +5,7 @@ export const offers = [
         cashback: 5000,
         type: "offers",
         subType: "Transaction",
+        eligibility: `Booking must be completed and not canceled. The referred must book a shortlet between ₦100,000 and above.`,
     },
     {
         id: 2,
@@ -12,6 +13,7 @@ export const offers = [
         cashback: 10000,
         type: "offers",
         subType: "Transaction",
+        eligibility: `User must be booking their first shortlet on the platform. Booking amount must be between ₦50,000 and above.`,
     },
     {
         id: 3,
@@ -19,6 +21,7 @@ export const offers = [
         cashback: 50000,
         type: "offers",
         subType: "Referral",
+        eligibility: `User must be purchasing their first property on the platform.`,
     },
     {
         id: 4,
@@ -26,6 +29,7 @@ export const offers = [
         cashback: 100000,
         type: "offers",
         subType: "Referral",
+        eligibility: `Property purchase must be finalized and not refunded.`,
     },
 ];
 

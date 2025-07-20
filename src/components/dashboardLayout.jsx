@@ -1,18 +1,22 @@
 import NavBar from "./navBar";
 import SideBar from "./sideBar";
 import proptype from "prop-types";
+import QuickHelpWidget from "./quickHelpWidget";
 
 DashBoardLayout.propTypes = {
     children: proptype.element,
 };
 export default function DashBoardLayout({ children }) {
     return (
-        <div className="min-h-[100vh]">
+        <div className="overflow-y-auto">
             <NavBar />
             <aside>
                 <SideBar />
             </aside>
-            <main>{children}</main>
+            <QuickHelpWidget />
+            <main className="pl-63 pt-26 overflow-y-auto pr-10 w-full min-h-[100vh]">
+                <div className="pb-10">{children}</div>
+            </main>
         </div>
     );
 }

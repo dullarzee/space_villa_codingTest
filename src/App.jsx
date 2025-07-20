@@ -6,8 +6,8 @@ import RewardPages from "./dashboardPages/rewardPage";
 
 function App() {
     return (
-        <DashBoardLayout>
-            <BrowserRouter>
+        <BrowserRouter>
+            <DashBoardLayout>
                 <Routes>
                     <Route
                         path="/"
@@ -15,8 +15,8 @@ function App() {
                     />
                     <Route path="dashboard/rewards" element={<RewardPages />} />
                 </Routes>
-            </BrowserRouter>
-        </DashBoardLayout>
+            </DashBoardLayout>
+        </BrowserRouter>
     );
 }
 

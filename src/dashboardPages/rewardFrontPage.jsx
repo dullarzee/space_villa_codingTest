@@ -9,6 +9,7 @@ import OffersAndRewardsSection from "../components/offerAndRewardsSection";
 import BlockViewNode from "../components/blockViewNode";
 import OfferDetailsOverlay from "../components/offerDetailsOverlay";
 import RewardSuccessOverlay from "../components/rewardSuccessOverlay";
+import { Link } from "react-router-dom";
 import {
     offers,
     rewards_pending,
@@ -19,7 +20,7 @@ import { useState } from "react";
 import ListViewNode from "../components/listViewNode";
 import RewardRejectedOverlay from "../components/rewardRejectedOverlay";
 
-export default function RewardPages() {
+export default function RewardFrontPages() {
     const [rewardsState, setRewardsState] = useState("offers");
     const [rewardsSubState, setRewardsSubState] = useState("pending");
     const [currentView, setCurrentView] = useState("list");
@@ -266,7 +267,10 @@ export default function RewardPages() {
                     </div>
 
                     <div className="flex w-full lg:w-115 h-18 md:h-[6rem] gap-x-[10px] md:gap-x-4 mt-[1.9rem]">
-                        <div className="flex flex-col border-[#F2F4F7] bg-[#FCFCFD] w-115 h-full border rounded-[12px] p-[9.63px] gap-[4px]">
+                        <Link
+                            to={"/dashboard/rewards/referrals"}
+                            className="flex flex-col border-[#F2F4F7] bg-[#FCFCFD] w-115 h-full border rounded-[12px] p-[9.63px] gap-[4px]"
+                        >
                             <div className="flex flex-col justify-center items-center gap-y-[3.5px]">
                                 <div className="flex justify-center items-center md:h-11 md:w-11 rounded-full">
                                     <img
@@ -278,7 +282,7 @@ export default function RewardPages() {
                                     Refer Friend
                                 </span>
                             </div>
-                        </div>
+                        </Link>
                         <div className="flex flex-col border-[#F2F4F7] bg-[#FCFCFD] w-115 h-full border rounded-[12px] p-[9.63px] gap-[4px]">
                             <div className="flex flex-col justify-center items-center gap-y-[3.5px]">
                                 <div className="flex justify-center items-center md:h-11 md:w-11 border-[5px] rounded-full border-[#F2F4F7]">

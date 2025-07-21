@@ -47,6 +47,28 @@ export default function BlockViewNode({
                 }));
             }, 200);
             console.log("passed through");
+        } else if (type === "rewards") {
+            if (status === "successful") {
+                setCurrentOverlayData((prev) => ({
+                    ...prev,
+                    rewardsSuccess: {
+                        cashback: cashback,
+                    },
+                }));
+                setTimeout(() => {
+                    setIsOverlayVisible((prev) => ({
+                        ...prev,
+                        rewardsSuccess: true,
+                    }));
+                }, 200);
+            } else if (status === "rejected") {
+                setTimeout(() => {
+                    setIsOverlayVisible((prev) => ({
+                        ...prev,
+                        rewardsRejected: true,
+                    }));
+                }, 200);
+            }
         }
     };
 

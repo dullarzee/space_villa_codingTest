@@ -9,14 +9,23 @@ import paymentsIcon from "../assets/paymentsIcon.svg";
 import helpIcon from "../assets/help&SupportIcon.svg";
 import logOutIcon from "../assets/logOut.svg";
 import { useLocation } from "react-router-dom";
+import proptype from "prop-types";
 
-export default function SideBar() {
+SideBar.propTypes = {
+    extraStyle: proptype.string,
+};
+
+const defaultExtraStyle =
+    "hidden lg:block z-15 fixed custom-scrollbar h-[100vh] overflow-y-scroll bottom-0 ";
+export default function SideBar({ extraStyle = defaultExtraStyle }) {
     const location = useLocation();
     console.log(location);
     return (
-        <div className="hidden lg:block z-15 bottom-0 left-0 fixed border border-[#D0D5DD] w-56 pb-6 bg-[#F2F4F7] custom-scrollbar h-[100vh] overflow-y-scroll">
+        <div
+            className={`border border-[#D0D5DD] w-56 pb-6 left-0 bg-[#F2F4F7] text-[0.8rem] md:text-base  ${extraStyle}`}
+        >
             <div className="flex flex-col gap-y-10 pl-4">
-                <div className="flex flex-col gap-y-5 pt-20">
+                <div className="flex flex-col gap-y-2.5 lg:gap-y-5 pt-4 lg:pt-20">
                     <button className="flex items-center  font-semibold gap-x-[10px] rounded-[8px] justify-start h-9">
                         <img src={homeIcon} />
                         <span>Home</span>
@@ -27,7 +36,7 @@ export default function SideBar() {
                     </button>
                     <button
                         className={`flex items-center  font-semibold gap-x-[10px] rounded-[8px] justify-start h-9 ${
-                            location.pathname === "/dashboard/rewards" &&
+                            location.pathname.includes("/rewards") &&
                             "bg-[#D1FADF]"
                         }`}
                     >
@@ -63,7 +72,9 @@ export default function SideBar() {
                 </div>
 
                 <div className="">
-                    <h2 className="text-gray-400 text-sm">SETTINGS</h2>
+                    <h2 className="text-gray-400 text-xs md:text-sm">
+                        SETTINGS
+                    </h2>
                     <div className="flex flex-col gap-y-5">
                         <button className="flex items-center  font-semibold gap-x-[10px] rounded-[8px] justify-start h-9">
                             <img src={helpIcon} />
